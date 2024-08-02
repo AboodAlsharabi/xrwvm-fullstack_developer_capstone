@@ -12,6 +12,21 @@
 
     const logout = async (e) => {
       //Include the code for logout here.
+      let logout_url = window.location.origin + "/djangoapp/logout";
+      const res = await fetch(logout_url, {
+        method: "GET",
+      });
+      const json = await res.json();
+      if (json) {
+        let username = sessionStorage.getItem('username');
+        sessionStorage.removeItem('username');
+        window.location.href = window.location.origin;
+        window.location.reload();
+        alert("Logging out " + username + "...")
+      }
+      else {
+        alert("The user could not be logged out.")
+      }
     };
 
     let checkSession = () => {
@@ -19,18 +34,19 @@
 
       if (curr_user && curr_user !== "") {
         document.getElementById("loginlogout").innerHTML =
-          '<span class="homepage_links">' + curr_user + '</span>' +
-          '<a class="homepage_links" onclick="logout()" href="/">Logout</a>'
+          '<span class="homepage_links me-5"> Welcome ' + curr_user + ' !</span>' +
+          '<button class="btn btnColor" onclick="logout()">Logout</button>'
       } else {
         document.getElementById("loginlogout").innerHTML =
-          '<a class="homepage_links" href="/login">Login</a>' +
-          '<a class="homepage_links"  href="/register">Register</a>'
+          '<a class="btn me-2 btnColor" href="/login" type="button">Login</a>' +
+          '<a class="btn btnColor" href="/register" type="button">Register</a>'
       }
     }
   </script>
 </head>
 
 <body onload="checkSession()">
+
   <nav class="navbar navbar-expand-md bg-body py-3">
     <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><span
           class="bs-icon-sm bs-icon-rounded d-flex justify-content-center align-items-center"><img
@@ -42,8 +58,10 @@
           <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
-        </ul><button class="btn me-2 btnColor" type="button">Login</button><button class="btn btnColor"
-          type="button">Register</button>
+        </ul>
+        <div class="loginlink" id="loginlogout">
+        </div>
+
       </div>
     </div>
   </nav>

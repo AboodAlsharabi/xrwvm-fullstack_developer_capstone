@@ -8,6 +8,13 @@ img {
   color: #fff !important;
 }
 
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
 body,
 .card {
   background-color: #f7f7f7 !important;
@@ -15,6 +22,7 @@ body,
 
 .footer {
   background-color: #fff;
+  margin-top: auto;
 }
 
 .card {
@@ -25,16 +33,6 @@ body,
   margin-right: 5%;
   margin-top: 1%;
   margin-bottom: 1%;
-}
-
-.row {
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  margin: auto;
-  margin-top: 1%;
-  justify-content: center;
-  padding: 20px;
 }
 
 .container {
@@ -58,7 +56,7 @@ body,
 
 .homepage_links {
   color: rgb(97, 64, 128);
-  padding: 25%;
+  /* padding: 25%; */
   font-size: larger;
 }
 
@@ -192,6 +190,7 @@ p.hero-subtitle {
 
 /*  */
 
-.card-title {
+.card-title,
+.iconColor {
   color: #175b7c !important;
 }
