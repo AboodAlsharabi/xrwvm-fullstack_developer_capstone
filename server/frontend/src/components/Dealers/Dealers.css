@@ -1,3 +1,10 @@
+.body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
 table{
     margin:5px;
     padding:10px;

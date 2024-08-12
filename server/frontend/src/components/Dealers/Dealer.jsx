@@ -7,6 +7,7 @@ import neutral_icon from "../assets/neutral.png"
 import negative_icon from "../assets/negative.png"
 import review_icon from "../assets/reviewbutton.png"
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 const Dealer = () => {
 
@@ -68,13 +69,14 @@ const Dealer = () => {
 
 
 return(
-  <div style={{margin:"20px"}}>
+  <div className='body'>
       <Header/>
+    <div>
       <div style={{marginTop:"10px"}}>
       <h1 style={{color:"grey"}}>{dealer.full_name}{postReview}</h1>
       <h4  style={{color:"grey"}}>{dealer['city']},{dealer['address']}, Zip - {dealer['zip']}, {dealer['state']} </h4>
       </div>
-      <div class="reviews_panel">
+    <div class="reviews_panel">
       {reviews.length === 0 && unreviewed === false ? (
         <text>Loading Reviews....</text>
       ):  unreviewed === true? <div>No reviews yet! </div> :
@@ -86,6 +88,8 @@ return(
         </div>
       ))}
     </div>  
+    </div>
+    <Footer/>
   </div>
 )
 }

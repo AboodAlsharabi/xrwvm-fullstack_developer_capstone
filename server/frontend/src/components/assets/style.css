@@ -8,6 +8,13 @@ img {
   color: #fff !important;
 }
 
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
 body,
 .card {
   background-color: #f7f7f7 !important;
@@ -15,6 +22,7 @@ body,
 
 .footer {
   background-color: #fff;
+    margin-top: auto;
 }
 
 .card {

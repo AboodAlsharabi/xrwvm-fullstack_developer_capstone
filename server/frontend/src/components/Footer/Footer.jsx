@@ -3,8 +3,8 @@ import React from 'react';
 const Footer = () => {
     
     return (
-        <div>
-<footer class="text-center footer">
+        <div className='footer'>
+<footer class="text-center">
     <div class="container text-muted py-4 py-lg-3">
         <ul class="list-inline">
             <li class="list-inline-item me-4"><a class="text-secondary"
