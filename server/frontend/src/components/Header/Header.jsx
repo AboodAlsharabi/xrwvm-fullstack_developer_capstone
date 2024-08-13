@@ -1,7 +1,6 @@
 import React from 'react';
-import "../assets/style.css";
 import "../assets/bootstrap.min.css";
-
+import "../assets/style.css";
 const Header = () => {
     const logout = async (e) => {
     e.preventDefault();
@@ -38,20 +37,20 @@ if ( curr_user !== null &&  curr_user !== "") {
 }
     return (
         <div>
-          <nav class="navbar navbar-expand-md bg-body py-3">
-            <div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><span
-                  class="bs-icon-sm bs-icon-rounded d-flex justify-content-center align-items-center"><img
-                    src="/static/dealership_logo.png" alt='' height="70" /></span></a><button class="navbar-toggler"
-                data-bs-toggle="collapse" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle
-                  navigation</span><span class="navbar-toggler-icon"></span></button>
-              <div id="navcol-1" class="collapse navbar-collapse">
-                <ul class="navbar-nav me-auto">
-                  <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
+          <nav className="navbar navbar-expand-md bg-body py-3">
+            <div className="container"><a className="navbar-brand d-flex align-items-center" href="/"><span
+                  className="bs-icon-sm bs-icon-rounded d-flex justify-content-center align-items-center"><img
+                    src="/static/dealership_logo.png" alt='' height="70" /></span></a><button className="navbar-toggler"
+                data-bs-toggle="collapse" data-bs-target="#navcol-1"><span className="visually-hidden">Toggle
+                  navigation</span><span className="navbar-toggler-icon"></span></button>
+              <div id="navcol-1" className="collapse navbar-collapse">
+                <ul className="navbar-nav me-auto">
+                  <li className="nav-item"><a className="nav-link active" href="/">Home</a></li>
+                  <li className="nav-item"><a className="nav-link" href="/about">About</a></li>
+                  <li className="nav-item"><a className="nav-link" href="/contact">Contact Us</a></li>
                 </ul>
-                <span class="navbar-text">
-                  <div class="loginlink" id="loginlogout">
+                <span className="navbar-text">
+                  <div className="loginlink" id="loginlogout">
                   {home_page_items}
                   </div>
                   </span>
