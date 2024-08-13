@@ -75,7 +75,7 @@ const Dealer = () => {
 return(
   <div className='body'>
       <Header/>
-    <div className="container">
+    <div className="container my-5">
 
       <div className="d-flex align-items-center w-100 justify-content-between">
             <div className="d-flex flex-column">
@@ -104,7 +104,7 @@ return(
         <text>Loading Reviews....</text>
       ):  unreviewed === true? <div>No reviews yet! </div> :
       reviews.map(review => (
-        <div className="d-flex justify-content-between align-items-center mt-5">
+        <div className="d-flex justify-content-between align-items-center mt-5 w-50">
 
         <div><img alt="Sentiment" className="img-fluid" src={senti_icon(review.sentiment)} style={{height: "50px"}} /></div>
      <div className="d-flex flex-column p-2 customCard">

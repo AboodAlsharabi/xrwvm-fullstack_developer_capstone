@@ -37,7 +37,7 @@ if ( curr_user !== null &&  curr_user !== "") {
 }
     return (
         <div>
-          <nav className="navbar navbar-expand-md bg-body py-3">
+          <nav className="navbar shadow navbar-expand-md bg-body py-3">
             <div className="container"><a className="navbar-brand d-flex align-items-center" href="/"><span
                   className="bs-icon-sm bs-icon-rounded d-flex justify-content-center align-items-center"><img
                     src="/static/dealership_logo.png" alt='' height="70" /></span></a><button className="navbar-toggler"
