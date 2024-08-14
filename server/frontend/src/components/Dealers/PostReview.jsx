@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import "./Dealers.css";
 import "../assets/style.css";
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 
 const PostReview = () => {
@@ -93,7 +94,7 @@ const PostReview = () => {
   return (
     <div>
       <Header/>
-      <div  style={{margin:"5%"}}>
+      {/* <div  style={{margin:"5%"}}>
       <h1 style={{color:"darkblue"}}>{dealer.full_name}</h1>
       <textarea id='review' cols='50' rows='7' onChange={(e) => setReview(e.target.value)}></textarea>
       <div className='input_field'>
@@ -116,7 +117,41 @@ const PostReview = () => {
       <div>
       <button className='postreview' onClick={postreview}>Post Review</button>
       </div>
+    </div> */}
+
+
+    <div className="container my-5 container-contact100">
+        <div className="wrap-contact100">
+            <form className="contact100-form validate-form"><span className="contact100-form-title">{dealer.full_name}</span>
+                <div className="d-flex align-items-center"><label className="form-label w-50">Purchase Date :&nbsp;</label>
+                    <div className="wrap-input100 validate-input" data-validate="Please enter your name"><input className="form-control input100" onChange={(e) => setDate(e.target.value)} type="date" /><span className="focus-input100"></span></div>
+                </div>
+                <div className="d-flex align-items-center"><label className="form-label w-50">Car Make :</label>
+                    <div className="wrap-input100 validate-input" data-validate="Please enter your email: e@a.x"><select name="cars" id="cars" onChange={(e) => setModel(e.target.value)} className="form-select">
+                    <option value="" selected disabled hidden>Choose Car Make and Model</option>
+                    {carmodels.map(carmodel => (
+                    <option value={carmodel.CarMake+" "+carmodel.CarModel}>{carmodel.CarMake} {carmodel.CarModel}</option>
+                    ))}
+                           
+                        </select><span className="focus-input100"></span></div>
+                </div>
+                <div className="d-flex align-items-center"><label className="form-label w-50">Car Year :</label>
+                    <div className="wrap-input100 validate-input" data-validate="Please enter your phone"><input onChange={(e) => setYear(e.target.value)} max={2023} min={2015} className="form-control input100" type="int" name="year" placeholder="year" /><span className="focus-input100"></span></div>
+                </div>
+                <div className="wrap-input100 validate-input" data-validate="Please enter your message"><textarea id='review' className="form-control input100" onChange={(e) => setReview(e.target.value)} name="comment" placeholder="Your Comment"></textarea><span className="focus-input100"></span></div>
+                <div className="container-contact100-form-btn"><button className="btn contact100-form-btn" onClick={postreview}><span>Post review<i className="fa fa-commenting-o fa fa-paper-plane-o m-r-6" aria-hidden="true"></i></span></button></div>
+            </form>
+        </div>
     </div>
+
+
+
+
+
+    <Footer/>
+
+
+
     </div>
   )
 }
